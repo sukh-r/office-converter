@@ -241,9 +241,9 @@ class OfficeConverter
         // getenv('HOME') isn't set on Windows and generates a Notice.
         if ($this->prefixExecWithExportHome) {
             $home = getenv('HOME');
-            if (!is_writable($home)) {
+            //if (!is_writable($home)) {
                 $cmd = 'export HOME=/tmp && '.$cmd;
-            }
+            //}
         }
         $process = proc_open($cmd, [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes);
 
