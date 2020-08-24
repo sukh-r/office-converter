@@ -141,11 +141,7 @@ class OfficeConverter
     {
         $DS = DIRECTORY_SEPARATOR;
         $tmpName = ($this->extension ? str_replace($this->extension, '', $this->basename) : $this->basename . '.').$outputExtension;
-        if (rename($outdir.$DS.$tmpName, $outdir.$DS.$filename)) {
-            return $outdir.$DS.$filename;
-        } elseif (is_file($outdir.$DS.$tmpName)) {
-            return $outdir.$DS.$tmpName;
-        }
+        return $filename;
 
         return null;
     }
